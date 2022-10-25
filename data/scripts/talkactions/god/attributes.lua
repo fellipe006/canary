@@ -15,6 +15,7 @@ local itemFunctions = {
 	["attack"] = { isActive = true, targetFunction = function (item, target) return item:setAttribute(ITEM_ATTRIBUTE_ATTACK, target) end },
 	["defense"] = { isActive = true, targetFunction = function (item, target) return item:setAttribute(ITEM_ATTRIBUTE_DEFENSE, target) end },
 	["extradefense"] = { isActive = true, targetFunction = function (item, target) return item:setAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE, target) end },
+	["charge"] = { isActive = true, targetFunction = function (item, target) return item:setAttribute(ITEM_ATTRIBUTE_CHARGES, target) end },
 	["armor"] = { isActive = true, targetFunction = function (item, target) return item:setAttribute(ITEM_ATTRIBUTE_ARMOR, target) end }
 }
 
@@ -38,7 +39,7 @@ local playerFunctions = {
 	["stamina"] = { isActive = true, targetFunction = function (player, target) return player:setStamina(target) end },
 	["town"] = { isActive = true, targetFunction = function (player, target) return player:setTown(Town(target)) end },
 	["balance"] = { isActive = true, targetFunction = function (player, target) return player:setBankBalance(target + player:getBankBalance()) end },
-	["save"] = { isActive = true, targetFunction = function (player, target) return target:save() end },
+	["save"] = { isActive = true, targetFunction = function (player, target) return player:save() end },
 	["type"] = { isActive = true, targetFunction = function (player, target) return player:setAccountType(target) end },
 	["skullTime"] = { isActive = true, targetFunction = function (player, target) return player:setSkullTime(target) end },
 	["maxMana"] = { isActive = true, targetFunction = function (player, target) return player:setMaxMana(target) end },
@@ -64,7 +65,7 @@ function attributes.onSay(player, words, param)
 	position:getNextPosition(player:getDirection(), 1)
 
 	local split = param:split(",")
-	local itemFunction, creatureFunction, playerFunction = itemFunctions[split[1]], creatureFunctions[split[1]], playerFunctions[split[1]]
+	local itemFunction, creatureFunction, playerFunction = itemFunctions[split[1]:lower()], creatureFunctions[split[1]:lower()], playerFunctions[split[1]:lower()]
 	if(itemFunction and itemFunction.isActive) then
 		local item = Tile(position):getTopVisibleThing(player)
 		if(not item or not item:isItem()) then

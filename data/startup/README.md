@@ -16,7 +16,7 @@ Reward keys = 5000/6000
 TeleportItem (action) = 15001/20000 (this is teleport items, not magic forcefield)
 TeleportItem (unique) = 15001/20000 (this is teleport items, not magic forcefield)
 
-Corpse (action )= 20000/25000
+Corpse (action)= 20000/25000
 Corpse (unique) = 20000/22000
 
 DoorStorage (action) = It is not defined, because it uses storages as action
@@ -43,7 +43,7 @@ Action IDS
 	The action is also used as storage, "x" storage is added in the player,
 	and the same action number gives access to a door, for example.
 
-	Reserved player action storage key ranges (const.hpp at the source)
+	Reserved player action storage key ranges (const.h at the source)
 	[10000000 - 20000000]
 	[1000 - 1500]
 	[2001 - 2011]

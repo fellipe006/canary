@@ -31,7 +31,6 @@ bld/
 [Oo]bj/
 [Ll]og/
 build/
-vcxproj/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -361,7 +360,7 @@ docker/**/otserver
 settings.json
 c_cpp_properties.json
 .history
-tasks.json
+TODO
 
 # CLion (JetBrains)
 .idea/
@@ -382,11 +381,12 @@ client_assertions.txt
 sftp-config.json
 
 # Binaries
-canary
-canary.old
+otbr
+otbr.old
 
 # VCPKG
 vcpkg_installed
 
 # CLION
 src/cmake-build-debug
+*.bak

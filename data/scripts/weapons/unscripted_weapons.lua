@@ -75,7 +75,10 @@ local weapons = {
 		-- gilded eldritch rod
 		itemId = 36675,
 		type = WEAPON_WAND,
+		wandType = "ice",
 		level = 250,
+		mana = 22,
+		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Druid", true},
@@ -86,7 +89,10 @@ local weapons = {
 		-- eldritch rod
 		itemId = 36674,
 		type = WEAPON_WAND,
+		wandType = "ice",
 		level = 250,
+		mana = 22,
+		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Druid", true},
@@ -97,7 +103,10 @@ local weapons = {
 		-- gilded eldritch wand
 		itemId = 36669,
 		type = WEAPON_WAND,
+		wandType = "fire",
 		level = 250,
+		mana = 22,
+		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Sorcerer", true},
@@ -108,7 +117,10 @@ local weapons = {
 		-- eldritch wand
 		itemId = 36668,
 		type = WEAPON_WAND,
+		wandType = "fire",
 		level = 250,
+		mana = 22,
+		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Sorcerer", true},
@@ -5108,13 +5120,13 @@ local weapons = {
 
 for _, w in ipairs(weapons) do
 	local weapon = Weapon(w.type)
-	weapon:id(w.itemid)
+	weapon:id(w.itemid or w.itemId)
 
 	if(w.action) then
 		weapon:action(w.action)
 	end
-	if(w.breakchance) then
-		weapon:breakChance(w.breakchance)
+	if(w.breakchance or w.breakChance) then
+		weapon:breakChance(w.breakchance or w.breakChance)
 	end
 	if(w.level) then
 		weapon:level(w.level)
@@ -5128,8 +5140,8 @@ for _, w in ipairs(weapons) do
 	if(w.damage) then
 		weapon:damage(w.damage[1], w.damage[2])
 	end
-	if(w.wandType) then
-		weapon:element(w.wandType)
+	if(w.wandtype or w.wandType) then
+		weapon:element(w.wandtype or w.wandType)
 	end
 	if(w.vocation) then
 		for _, v in ipairs(w.vocation) do

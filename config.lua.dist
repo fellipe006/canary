@@ -32,10 +32,10 @@ loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 0
-motd = "Welcome to the Canary!"
+motd = "Welcome to the OTServBR-Global!"
 onePlayerOnlinePerAccount = true
 allowClones = false
-serverName = "Canary"
+serverName = "OTServBR-Global"
 statusTimeout = 5 * 1000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 25
@@ -98,9 +98,6 @@ autoLoot = false
 -- autoBank = true, the dropped coins from monsters will be automatically 
 -- deposited to your bank account.
 autoBank = false
--- teleporte summon
--- true will never remove the summon
-teleportSummons = false
 
 -- Stamina in Trainers
 staminaTrainer = false
@@ -164,9 +161,9 @@ pushWhenAttacking = false
 -- NOTE: set mapName WITHOUT .otbm at the end
 -- NOTE: If toggleDownloadMap if false, then the mapDownloadUrl will not be used
 -- NOTE: If a map with the name already exists in the world folder, the map will not be downloaded even if the toggleDownloadMap is true
-toggleDownloadMap = false
-mapName = "canary"
-mapDownloadUrl = ""
+toggleDownloadMap = true
+mapName = "otservbr"
+mapDownloadUrl = "https://github.com/opentibiabr/otservbr-global/releases/download/v1.5.0/otservbr.otbm"
 mapAuthor = "OpenTibiaBR"
 
 -- Party List limitations
@@ -176,8 +173,8 @@ partyListMaxDistance = 30
 
 -- Custom Map
 -- NOTE: mapCustomEnabled: true = activate the map, false = disable the map
-toggleMapCustom = false
-mapCustomName = "canary-custom"
+toggleMapCustom = true
+mapCustomName = "otservbr-custom"
 mapCustomAuthor = "OpenTibiaBR"
 
 -- Market
@@ -190,7 +187,7 @@ maxMarketOffersAtATimePerPlayer = 100
 mysqlHost = "127.0.0.1"
 mysqlUser = "root"
 mysqlPass = ""
-mysqlDatabase = "canary"
+mysqlDatabase = "otservbr-global"
 mysqlPort = 3306
 mysqlSock = ""
 passwordType = "sha1"
@@ -229,7 +226,7 @@ globalServerSaveTime = "06:00:00"
 sortLootByChance = false
 
 -- Rates
--- NOTE: rateExp, rateSkill and rateMagic are only used when 'rateUseStages = false'
+-- NOTE: rateExp, rateSkill and rateMagic is used when 'rateUseStages = false' - or a fallback only
 -- To configure rates see file data/stages.lua
 rateUseStages = false
 rateExp = 1
